@@ -1,0 +1,48 @@
+A 3
+B
+G
+L
+B 3
+A
+C
+H
+C 4
+B
+G
+D
+K
+D 4
+J
+E
+C
+G
+E 3
+F
+J
+D
+F 4
+E
+I
+H
+K
+G 3
+A
+C
+D
+H 2
+F
+B
+I 2
+F
+J
+J 4
+L
+D
+E
+I
+K 2
+C
+F
+L 2
+J
+A
