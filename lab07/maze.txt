@@ -1,0 +1,11 @@
+maze.txt
+
+# Wonjun Jo and AJ Thomas
+
+Conceptually, the only difference between a stack and a queue is the fact that a stack is LIFO and a queue is FIFO. This means that for a stack implementation, each time the stack accumulates a new choice and then pops a choice, it will proceed with the most recently added choice. This means that if there are multiple choices of the maze, the pointer will explore one path entirely, before exploring another path - a behavior similar to recursion.
+
+However, in a queue implementation, since the choices are popped in the order they are accumulated, the pointer will explore all possible paths at the same time - one step into one path, then one step into another path, then back to the second step in the first path, and so forth.
+
+In general, the exact structure of the maze will determine whether a stack or queue implementation will be more efficient, for example, the number of diversions there are and the length of each diversions. However, assuming an average case, the stack implementation may be more efficient. This is because for the queue implementation, we must explore all possible paths, on average, before we reach the exit. However, for the stack implementation, there is a possibility that we find the exit on the first few diversions; and of course, in the worst case, we also must explore possible paths.
+
+Therefore, the average runtime of the queue implementation seems to be the size of the maze, whereas the average runtime of the stack implementation seems to be around 1/2 of the size of the maze because there is possibility that we may exit the maze in the first try or the last try.
