@@ -1,0 +1,20 @@
+This text document briefly describes the various issues and changes made to the random_ints.c file.
+
+Author: Wonjun Jo
+1/28/24
+
+
+1.
+Problem:
+We only get ~10 numbers written to the file instead of 20.
+
+Solution: 
+For the for loop that iterates through the array and writes each element to the file, the conditional statement should be i < ARRAY_SIZE and not i < sizeof(array), because array is a pointer type. When a pointer is passed into the sizeof() function, it returns the size of the pointer, as opposed to the length of the array that the pointer points to.
+
+
+2.
+Problem:
+For what we suspect is supposed to be a negative number, we get very huge integers.
+
+Solution:
+For fprintf(), the format string should be "%" PRId64 "\n" instead of "%" PRIu64 "\n". The "u" in between the "PRI" and "64" stands for unsigned integer. However, in this case, we have negative numbers as well. Thus, we need to use format macro constants that account for signed integers.
